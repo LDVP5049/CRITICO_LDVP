@@ -53,6 +53,7 @@
                 <CheckBox IsChecked="False" 
                           Grid.Row="0"
                           Grid.Column="0"
+                          x:Name="Alto"
                               />
                 <Label    Text="ALTO"
                           Grid.Row="0"
@@ -62,6 +63,7 @@
                 <CheckBox IsChecked="False"
                           Grid.Row="1"
                           Grid.Column="0"
+                          x:Name="Listo"
                               />
                 <Label    Text="LISTO"
                           Grid.Row="1"
@@ -71,6 +73,7 @@
                 <CheckBox IsChecked="False"
                           Grid.Row="2"
                           Grid.Column="0"
+                          x:Name="Raro"
                              />
                 <Label    Text="RARO"
                           Grid.Row="2"
@@ -81,6 +84,7 @@
                 <CheckBox IsChecked="False" 
                           Grid.Row="0"
                           Grid.Column="2"
+                          x:Name="Feo"
                               />
                 <Label    Text="FEO"
                           Grid.Row="0"
@@ -90,6 +94,7 @@
                 <CheckBox IsChecked="False"
                           Grid.Row="1"
                           Grid.Column="2"
+                          x:Name="Extravagante"
                               />
                 <Label    Text="EXTRAVAGANTE"
                           Grid.Row="1"
@@ -99,7 +104,9 @@
                 <CheckBox IsChecked="False"
                           Grid.Row="2"
                           Grid.Column="2"
-                              Margin="0,0,0,0"/>
+                          Margin="0,0,0,0"
+                          x:Name="Grande"
+                              />
                 <Label    Text="GRANDE"
                           Grid.Row="2"
                           Grid.Column="3"

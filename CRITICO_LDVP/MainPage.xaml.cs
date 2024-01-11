@@ -20,30 +20,53 @@ namespace CRITICO_LDVP
         private void Button_Clicked(object sender, EventArgs e)
         {
             string nombre = Nombre.Text;
-            critica = nombre;
-            Critica.Text = critica.ToString();
-           
+            string genero = (Hombre.IsChecked ? "Hombre" : "Mujer");
+
+            critica = nombre + " es ";
+
+            List<string> caracteristicas = new List<string>();
+
+            // Verificar cada checkbox y agregar la característica correspondiente a la lista
+            if (Alto.IsChecked)
+                caracteristicas.Add("alto");
+            if (Listo.IsChecked)
+                caracteristicas.Add("listo");
+            if (Raro.IsChecked)
+                caracteristicas.Add("raro");
+            if (Feo.IsChecked)
+                caracteristicas.Add("feo");
+            if (Extravagante.IsChecked)
+                caracteristicas.Add("extravagante");
+            if (Grande.IsChecked)
+                caracteristicas.Add("grande");
+
+            // Cambiar la última letra de las características si el RadioButton "Mujer" está seleccionado
+            if (genero == "Mujer")
+            {
+                for (int i = 0; i < caracteristicas.Count; i++)
+                {
+                    if (caracteristicas[i] != "extravagante" && caracteristicas[i] != "grande")
+                    {
+                        caracteristicas[i] = caracteristicas[i].Substring(0, caracteristicas[i].Length - 1) + "a";
+                    }
+                }
+            }
+
+            // Construir la cadena de crítica usando la lista de características
+            for (int i = 0; i < caracteristicas.Count; i++)
+            {
+                critica += caracteristicas[i];
+
+                if (i < caracteristicas.Count - 2)
+                    critica += ", ";
+                else if (i == caracteristicas.Count - 2)
+                    critica += " y ";
+            }
+
+            critica += ".";
+
+            Critica.Text = critica;
         }
-        
-        /* public void ButtonClicked(string genero)
-         { 
-             string gen = genero;
-             Genero();
-             Critica.Text = gen;
-         }
-         public string Genero()
-         {
-             string genero;
-             if (Hombre.IsChecked == true && Mujer.IsChecked == false)
-             {
-                 genero = "Hombre";
-                 return genero;
-             }
-             else
-             {
-                 genero = "Mujer";
-                 return genero;
-             }
-         }*/
     }
 }
+
