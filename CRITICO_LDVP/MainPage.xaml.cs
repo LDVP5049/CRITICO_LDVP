@@ -26,7 +26,6 @@ namespace CRITICO_LDVP
 
             List<string> caracteristicas = new List<string>();
 
-            // Verificar cada checkbox y agregar la característica correspondiente a la lista
             if (Alto.IsChecked)
                 caracteristicas.Add("alto");
             if (Listo.IsChecked)
@@ -40,7 +39,6 @@ namespace CRITICO_LDVP
             if (Grande.IsChecked)
                 caracteristicas.Add("grande");
 
-            // Cambiar la última letra de las características si el RadioButton "Mujer" está seleccionado
             if (genero == "Mujer")
             {
                 for (int i = 0; i < caracteristicas.Count; i++)
@@ -51,8 +49,6 @@ namespace CRITICO_LDVP
                     }
                 }
             }
-
-            // Construir la cadena de crítica usando la lista de características
             for (int i = 0; i < caracteristicas.Count; i++)
             {
                 critica += caracteristicas[i];
